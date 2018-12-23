@@ -12,7 +12,7 @@ import com.gmail.atpt34.model.impl.FutureCar;
 import com.gmail.atpt34.model.impl.OrdinaryCar;
 
 @Configuration
-@ComponentScan("com.gmail.atpt34")
+//@ComponentScan("com.gmail.atpt34")
 @PropertySource("classpath:app.properties")
 public class AppConfig {
 

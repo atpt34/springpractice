@@ -10,8 +10,15 @@ public class MainRunner {
 	public static void main(String[] args) {
 		System.out.println("main(.)");
 		
+//		AnnotationConfigApplicationContext context = 
+//			new AnnotationConfigApplicationContext(AppConfig.class);
+		
+		
 		AnnotationConfigApplicationContext context = 
-			new AnnotationConfigApplicationContext(AppConfig.class);
+				new AnnotationConfigApplicationContext();
+		context.scan("com.gmail.atpt34");
+		context.register(AppConfig.class);
+		context.refresh();
 		
 		System.out.println("getting the beans...");
 		
@@ -31,11 +38,13 @@ public class MainRunner {
 		
 		Car lambo = context.getBean("futureCar", Car.class);
 		System.out.println(lambo);
+		System.out.println(lambo.getWheels());
 		lambo.drive();
 		
 		Car bossy = context.getBean("getBossVehicle", Car.class);
 		System.out.println(bossy);
 		bossy.drive();
+		System.out.println(bossy.getWheels());
 		
 		context.close();
 	}
