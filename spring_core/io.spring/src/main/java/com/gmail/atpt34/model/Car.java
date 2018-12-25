@@ -14,4 +14,8 @@ public interface Car {
 	Engine getEngine();
 
 	List<Wheel> getWheels();
+
+	void setEngine(Engine engine);
+
+	void setName(String name);
 }

@@ -80,4 +80,9 @@ public class FutureCar implements Car, InitializingBean, DisposableBean {
 	public List<Wheel> getWheels() {
 		return wheels;
 	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
 }

@@ -26,6 +26,10 @@ public class OrdinaryCar implements Car {
 		System.out.println("OrdinaryCar() of year " + year);
 	}
 
+	public OrdinaryCar(Engine eng) {
+		this.engine = eng;
+	}
+
 	@Override
 	public void drive() {
 		System.out.println("drive ordinary car");
@@ -46,4 +50,13 @@ public class OrdinaryCar implements Car {
 		return null;
 	}
 	
+	@Override
+	public void setEngine(Engine engine) {
+		this.engine = engine;
+	}
+	
+	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
 }

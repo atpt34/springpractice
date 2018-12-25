@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd"
+        >
+        
+        <!-- 
+        <bean id="a" class="epm.springtask.A" >
+		</bean>
+		
+		<bean id="c" class="epm.springtask.C" >
+			<property name="result" value="#{a.hello()}"></property>
+		</bean>
+		 -->
+    
+    <!--     
+    <bean name="someComponent" class="epm.springtask.SomeComponent"
+           init-method="init" destroy-method="close"
+           lazy-init="true" scope="prototype" >           
+    </bean>
+   
+    <bean name="someService" class="epm.springtask.SomeService"
+          init-method="init" destroy-method="close" >
+       <constructor-arg ref="someComponent"/>                  
+    </bean>
+     -->
+    
+    <!-- 
+        <bean name="someService" class="epm.springtask.SomeService">
+        <constructor-arg>
+            <bean name="someComponent" class="epm.springtask.SomeComponent" />                     
+        </constructor-arg>                  
+    </bean>
+     -->
+     
+     <bean name="someComponent" class="epm.springtask.SomeComponent" >
+     	<constructor-arg>
+     		<map>
+			    <entry key="ccc" value="#{{'aaa', 'bbb'}}"/>
+			</map>
+     	</constructor-arg>
+     	<property name="str" value="${futureCar.name}" />
+     </bean>
+     
+     
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	  <property name="location">
+	    <value>app.properties</value>
+	  </property>
+	</bean>
+    
+</beans>
